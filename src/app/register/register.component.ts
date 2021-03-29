@@ -5,7 +5,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  //styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
@@ -32,7 +32,7 @@ export class RegisterComponent implements OnInit {
       localStorage.setItem("username", this.data.username.value);
       localStorage.setItem("password", this.data.password.value);
       this._snackBar.open('Register Successfully', 'Success', {
-        duration: 2000,
+        duration: 500,
       });
       this.router.navigate(['/login']);
     }

@@ -1,7 +1,6 @@
-<mat-toolbar class="position-absolute" color="primary">
+<mat-toolbar class="position-absolute" color="primary" style="color: aquamarine">
   <mat-toolbar-row class="justify-content-between">
-    <button [routerLink]="['/home']" mat-button>Home</button>
-    <button [routerLink]="['/login']" mat-button>Logout</button>
+    <button [routerLink]="['/login']" mat-button style="border: 3px solid #000; background-color: rgb(80, 175, 250);	color: black;">Logout</button>
   </mat-toolbar-row>
 </mat-toolbar>
 <div class="d-flex align-items-center h-100">
@@ -9,43 +8,36 @@
     <div class="row justify-content-center">
       <div class="col-sm-5">
         <mat-card>
-          <h3 class="text-center">Welcome to the portal</h3>
+          <h3 class="text-center" style="font-size: 36px;">Welcome to the portal</h3>
         </mat-card>
       </div>
     </div>
   </div>
+  
   <div class="card">
     <form [formGroup]="userForm">
       <div class="mt-5">
         <div class="form-row">
           <div class="col-md-12">
             <div class="form-group">
-              <label>Contact Name</label>
+              &nbsp;&nbsp;&nbsp;
+              <label>Type the tasks you need to do in this box</label>
             </div>
             <div class="form-row">
               <div class="col">
-                <input type="text" formControlName="name" class="form-control">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-12">
-            <div class="form-group">
-              <label>Phone Number</label>
-            </div>
-            <div class="form-row">
-              <div class="col">
-                <input type="text" formControlName="phoneNumber" class="form-control">
+                &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" formControlName="name" class="form-control" 
+                style="font: bold 20px Georgia, serif; border: 3px solid #000;"><p></p>
               </div>
             </div>
           </div>
 
           <div class="form-row mt-4">
             <div class="col-md-6">
-              <button type="button" class="btn btn-primary" (click)="addItem()">
+              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <button type="button" class="btn btn-primary" (click)="addItem()" mat-button style="border: 3px solid #000; background-color: rgb(80, 175, 250);	color: black;">
                 Add
-              </button>&nbsp;
-              <button type="button" class="btn btn-primary" (click)="reset()">
+              </button>&nbsp;&nbsp;&nbsp;
+              <button type="button" class="btn btn-primary" (click)="reset()" mat-button style="border: 3px solid #000; background-color: rgb(80, 175, 250);	color: black;">
                 Delete
               </button>
             </div>
@@ -55,21 +47,14 @@
     </form>
 
     <div class="col-md-8 mt-4 mb-4">
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th>Contact Name</th>
-            <th>Phone Number</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let item of listData">
-            <td><span>{{item.name}}</span></td>
-            <td><span>{{item.phoneNumber}}</span></td>
-            <td><button type="button" class="btn btn-primary" (click)="removeItem(item)">Delete</button></td>
-          </tr>
-        </tbody>
-      </table>
+      <h3 style="font-size: 30px;">&nbsp;&nbsp;&nbsp;To Do:</h3>
+      <ul class="list-group" *ngFor="let item of listData">
+        <li class="list-group-item" style="font-size: 24px;
+        font-family: Walter Turncoat;"><span>&nbsp;&nbsp;&nbsp;{{item.name}}</span>&nbsp;&nbsp;&nbsp;
+          <button type="button" class="btn btn-primary" (click)="removeItem(item)" 
+          mat-button style="border: 3px solid #000; background-color: rgb(80, 175, 250);	color: black;">
+          Delete</button></li>
+      </ul>
     </div>
   </div>
 </div>

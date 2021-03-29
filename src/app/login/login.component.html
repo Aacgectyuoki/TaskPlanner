@@ -3,7 +3,7 @@
     <div class="row justify-content-center">
       <div class="col-sm-5">
         <div class="alert alert-danger" role="alert" *ngIf="submitted">
-          Username or password is incorrect
+          Username or Password is incorrect. Please try again.
         </div>
         <mat-card>
           <h3 class="text-center">Login</h3>
@@ -11,18 +11,21 @@
             <mat-form-field class="w-100">
               Username: 
               <input type="text" style="border: 1px solid gray;" matInput placeholder="" formControlName="username">
-              <mat-error *ngIf="data.username.errors?.required">Username is required</mat-error>
+              <mat-error *ngIf="data.username.errors?.required">Username required</mat-error>
             </mat-form-field>
             <br/><br/>
             <mat-form-field class="w-100">
               Password: 
               <input type="password" style="border: 1px solid gray;" matInput placeholder="" formControlName="password">
-              <mat-error *ngIf="data.password.errors?.required">Password is required</mat-error>
+              <mat-error *ngIf="data.password.errors?.required">Password required</mat-error>
             </mat-form-field>
             <br/><br/>
             <div class="form-group mt-4">
-              <button mat-raised-button color="primary">Login</button>
-              <a [routerLink]="['/register']" class="ml-2" mat-button color="primary">Register</a>
+              <button mat-raised-button color="primary"
+              style="border: 3px solid #000; background-color: rgb(80, 175, 250);	color: black;">Login</button>
+              &nbsp;
+              <a [routerLink]="['/register']" class="ml-2" mat-button color="primary"
+              style="border: 3px solid #000; background-color: rgb(80, 175, 250);	color: black;">Register</a>
             </div>
           </form>
         </mat-card>

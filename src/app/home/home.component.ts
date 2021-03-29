@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+ // styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
   //[x: string]:this.data.username;
@@ -12,7 +13,7 @@ export class HomeComponent implements OnInit {
   userForm: FormGroup;
   listData: any;
 
-  constructor(private fb:FormBuilder) {
+  constructor(public fb:FormBuilder) {
     this.listData=[];
     this.userForm = this.fb.group ({
       name :['', Validators.required],
@@ -38,5 +39,10 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  /**storeUser(empRef:any){
+    console.log(empRef);
+    this.fb.storeEmployee(empRef);
+  }**/
 
 }
