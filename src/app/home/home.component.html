@@ -18,26 +18,57 @@
     <form [formGroup]="userForm">
       <div class="mt-5">
         <div class="form-row">
+
           <div class="col-md-12">
             <div class="form-group">
-              &nbsp;&nbsp;&nbsp;
-              <label>Type the tasks you need to do in this box</label>
+              <label>ID</label>
             </div>
             <div class="form-row">
               <div class="col">
-                &nbsp;&nbsp;&nbsp;&nbsp;<input type="text" formControlName="name" class="form-control" 
-                style="font: bold 20px Georgia, serif; border: 3px solid #000;"><p></p>
+                <input type="number" formControlName="id" class="form-control">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Name</label>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <input type="text" formControlName="name" class="form-control">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Task</label>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <input type="text" formControlName="task" class="form-control">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="form-group">
+              <label>Deadline</label>
+            </div>
+            <div class="form-row">
+              <div class="col">
+                <input type="text" formControlName="deadline" class="form-control">
               </div>
             </div>
           </div>
 
           <div class="form-row mt-4">
             <div class="col-md-6">
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <button type="button" class="btn btn-primary" (click)="addItem()" mat-button style="border: 3px solid #000; background-color: rgb(80, 175, 250);	color: black;">
+              <button type="button" class="btn btn-primary" (click)="addItem()">
                 Add
-              </button>&nbsp;&nbsp;&nbsp;
-              <button type="button" class="btn btn-primary" (click)="reset()" mat-button style="border: 3px solid #000; background-color: rgb(80, 175, 250);	color: black;">
+              </button>&nbsp;
+              <button type="button" class="btn btn-primary" (click)="reset()">
                 Delete
               </button>
             </div>
@@ -47,14 +78,25 @@
     </form>
 
     <div class="col-md-8 mt-4 mb-4">
-      <h3 style="font-size: 30px;">&nbsp;&nbsp;&nbsp;To Do:</h3>
-      <ul class="list-group" *ngFor="let item of listData">
-        <li class="list-group-item" style="font-size: 24px;
-        font-family: Walter Turncoat;"><span>&nbsp;&nbsp;&nbsp;{{item.name}}</span>&nbsp;&nbsp;&nbsp;
-          <button type="button" class="btn btn-primary" (click)="removeItem(item)" 
-          mat-button style="border: 3px solid #000; background-color: rgb(80, 175, 250);	color: black;">
-          Delete</button></li>
-      </ul>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>EmpID</th>
+            <th>Name</th>
+            <th>Task</th>
+            <th>Deadline</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of listData">
+            <td><span>{{item.id}}</span></td>
+            <td><span>{{item.name}}</span></td>
+            <td><span>{{item.task}}</span></td>
+            <td><span>{{item.deadline}}</span></td>
+            <td><button type="button" class="btn btn-primary" (click)="removeItem(item)">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
