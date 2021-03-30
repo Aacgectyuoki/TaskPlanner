@@ -16,8 +16,10 @@ export class HomeComponent implements OnInit {
   constructor(public fb:FormBuilder) {
     this.listData=[];
     this.userForm = this.fb.group ({
-      name :['', Validators.required],
-      phoneNumber: ['', Validators.required]
+      id :['', Validators.required],
+      name: ['', Validators.required],
+      task: ['', Validators.required],
+      deadline: ['', Validators.required]
     })
    }
 
