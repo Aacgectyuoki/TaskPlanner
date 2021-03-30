@@ -14,7 +14,7 @@
     </div>
   </div>
   
-  <div class="card">
+  <div class="card" style="padding-left:3px;">
     <form [formGroup]="userForm">
       <div class="mt-5">
         <div class="form-row">
@@ -78,7 +78,8 @@
     </form>
 
     <div class="col-md-8 mt-4 mb-4">
-      <table class="table table-bordered">
+      <table class="table table-bordered" style="width:50%; 
+      border-collapse: collapse; border: 1px solid black;">
         <thead>
           <tr>
             <th>EmpID</th>
@@ -100,3 +101,13 @@
     </div>
   </div>
 </div>
+<style>
+  table, td, th {
+  border: 1px solid black;
+}
+
+table {
+  width: 80%;
+  border-collapse: collapse;
+}
+</style>
